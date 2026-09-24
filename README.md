@@ -6,7 +6,7 @@ When the review isn't done, the engineer sees exactly why. When it is, the relea
 
 ![Release Gate console](docs/screenshot.png)
 
-Built as a concept demo for CoLab's Workflows team. CoLab already syncs review comments with Jira and attaches review summaries back in PLM; this takes the next step and makes the release itself depend on the review. Jira and Windchill are mocks, but they talk to the gate over real HTTP with signed webhooks, and the integration handles the failures a real one has to: outages, lost responses, duplicate and out-of-order webhooks, and its own echoes.
+Built as a concept demo for CoLab's Workflows team, which makes CoLab fit into the way engineering teams already work. CoLab already syncs review comments with Jira and attaches review summaries back in PLM; this takes the next step and makes the release itself depend on the review. Jira and Windchill are mocks, but they talk to the gate over real HTTP with signed webhooks, and the integration handles the failures a real one has to: outages, lost responses, duplicate and out-of-order webhooks, and its own echoes.
 
 ## Run it
 
