@@ -1,0 +1,6 @@
+# Runtime (Python 3.10+). Versions tested together.
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+strawberry-graphql==0.327.7
+SQLAlchemy==2.0.54
+httpx==0.28.1
