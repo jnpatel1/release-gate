@@ -1,0 +1,166 @@
+/*
+  Release Gate design tokens.
+  Neutrals are cool drafting greys; the accent is layout-fluid blue (the dye
+  machinists brush on metal before scribing lines). Status colours are kept
+  separate from the accent and always ship with an icon and a label.
+*/
+:root {
+  color-scheme: light;
+
+  --bg: #e6eaef;
+  --sheet: #f6f8fa;
+  --sheet-edge: #b9c3ce;
+  --grid: rgba(30, 48, 74, 0.055);
+  --grid-major: rgba(30, 48, 74, 0.085);
+  --panel: #ffffff;
+  --panel-2: #f3f5f8;
+  --panel-3: #e9edf2;
+  --hover: #eef2f7;
+  --ink: #101722;
+  --ink-2: #394657;
+  --muted: #637083;
+  --faint: #8f9bab;
+  --rule: #dce2e9;
+  --rule-2: #c6cfd9;
+  --scrim: rgba(12, 18, 27, 0.42);
+
+  --accent: #2448d0;
+  --accent-hover: #1c3bb3;
+  --accent-soft: #e5ebfd;
+  --accent-ink: #1b37a6;
+  --on-accent: #ffffff;
+
+  --crit: #cf3a34;
+  --crit-soft: #fbe8e7;
+  --crit-ink: #a3261f;
+  --high: #d9681c;
+  --high-soft: #fcede2;
+  --high-ink: #9f4a0c;
+  --med: #b98409;
+  --med-soft: #faf1d9;
+  --med-ink: #7f5a05;
+  --low: #6b788b;
+  --low-soft: #edf0f4;
+  --low-ink: #4a5667;
+  --pass: #14895a;
+  --pass-soft: #e1f4ea;
+  --pass-ink: #0d6a44;
+  --waived: #6a5cc4;
+  --waived-soft: #eeebfb;
+  --waived-ink: #4f42a6;
+  --ai: #0a7d8d;
+  --ai-soft: #dff3f5;
+  --ai-ink: #086370;
+
+  --shadow-1: 0 1px 2px rgba(16, 23, 34, 0.06), 0 1px 1px rgba(16, 23, 34, 0.04);
+  --shadow-2: 0 2px 6px rgba(16, 23, 34, 0.06), 0 10px 28px rgba(16, 23, 34, 0.08);
+  --shadow-3: 0 24px 64px rgba(16, 23, 34, 0.22), 0 4px 12px rgba(16, 23, 34, 0.08);
+
+  --font-ui: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', 'Roboto Condensed', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --r-sm: 4px;
+  --r: 6px;
+  --r-lg: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0a0e13;
+    --sheet: #0e141b;
+    --sheet-edge: #2c3845;
+    --grid: rgba(150, 180, 220, 0.045);
+    --grid-major: rgba(150, 180, 220, 0.075);
+    --panel: #111820;
+    --panel-2: #151d26;
+    --panel-3: #1b2530;
+    --hover: #18212b;
+    --ink: #e4eaf1;
+    --ink-2: #b3bfcd;
+    --muted: #8391a3;
+    --faint: #5d6b7d;
+    --rule: #202a35;
+    --rule-2: #2c3845;
+    --scrim: rgba(0, 0, 0, 0.6);
+    --accent: #7995ff;
+    --accent-hover: #93aaff;
+    --accent-soft: rgba(121, 149, 255, 0.14);
+    --accent-ink: #a8baff;
+    --on-accent: #0a0e13;
+    --crit: #f0605a;
+    --crit-soft: rgba(240, 96, 90, 0.14);
+    --crit-ink: #ff8f89;
+    --high: #f08946;
+    --high-soft: rgba(240, 137, 70, 0.14);
+    --high-ink: #ffab74;
+    --med: #e0b03e;
+    --med-soft: rgba(224, 176, 62, 0.14);
+    --med-ink: #f0c96a;
+    --low: #8e9bad;
+    --low-soft: rgba(142, 155, 173, 0.14);
+    --low-ink: #b8c3d0;
+    --pass: #35c98b;
+    --pass-soft: rgba(53, 201, 139, 0.14);
+    --pass-ink: #6fdeac;
+    --waived: #a697f2;
+    --waived-soft: rgba(166, 151, 242, 0.15);
+    --waived-ink: #c6bbfb;
+    --ai: #3cc2d2;
+    --ai-soft: rgba(60, 194, 210, 0.14);
+    --ai-ink: #7bd9e4;
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 10px 28px rgba(0, 0, 0, 0.35);
+    --shadow-3: 0 24px 64px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0e13;
+  --sheet: #0e141b;
+  --sheet-edge: #2c3845;
+  --grid: rgba(150, 180, 220, 0.045);
+  --grid-major: rgba(150, 180, 220, 0.075);
+  --panel: #111820;
+  --panel-2: #151d26;
+  --panel-3: #1b2530;
+  --hover: #18212b;
+  --ink: #e4eaf1;
+  --ink-2: #b3bfcd;
+  --muted: #8391a3;
+  --faint: #5d6b7d;
+  --rule: #202a35;
+  --rule-2: #2c3845;
+  --scrim: rgba(0, 0, 0, 0.6);
+  --accent: #7995ff;
+  --accent-hover: #93aaff;
+  --accent-soft: rgba(121, 149, 255, 0.14);
+  --accent-ink: #a8baff;
+  --on-accent: #0a0e13;
+  --crit: #f0605a;
+  --crit-soft: rgba(240, 96, 90, 0.14);
+  --crit-ink: #ff8f89;
+  --high: #f08946;
+  --high-soft: rgba(240, 137, 70, 0.14);
+  --high-ink: #ffab74;
+  --med: #e0b03e;
+  --med-soft: rgba(224, 176, 62, 0.14);
+  --med-ink: #f0c96a;
+  --low: #8e9bad;
+  --low-soft: rgba(142, 155, 173, 0.14);
+  --low-ink: #b8c3d0;
+  --pass: #35c98b;
+  --pass-soft: rgba(53, 201, 139, 0.14);
+  --pass-ink: #6fdeac;
+  --waived: #a697f2;
+  --waived-soft: rgba(166, 151, 242, 0.15);
+  --waived-ink: #c6bbfb;
+  --ai: #3cc2d2;
+  --ai-soft: rgba(60, 194, 210, 0.14);
+  --ai-ink: #7bd9e4;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 10px 28px rgba(0, 0, 0, 0.35);
+  --shadow-3: 0 24px 64px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
