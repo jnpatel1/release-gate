@@ -1,0 +1,989 @@
+{
+  "workspace": {
+    "name": "Kestrel Robotics",
+    "program": "ACT-100 Linear Actuator",
+    "currentUserId": "p-jordan"
+  },
+  "people": [
+    {
+      "id": "p-jordan",
+      "name": "Jordan Lee",
+      "role": "Design Lead",
+      "org": "Kestrel Robotics",
+      "initials": "JL"
+    },
+    {
+      "id": "p-maya",
+      "name": "Maya Chen",
+      "role": "Design Engineer",
+      "org": "Kestrel Robotics",
+      "initials": "MC"
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Ortega",
+      "role": "Manufacturing Engineer",
+      "org": "Kestrel Robotics",
+      "initials": "LO"
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Nair",
+      "role": "Quality Engineer",
+      "org": "Kestrel Robotics",
+      "initials": "PN"
+    },
+    {
+      "id": "p-noor",
+      "name": "Noor Haddad",
+      "role": "Test Engineer",
+      "org": "Kestrel Robotics",
+      "initials": "NH"
+    },
+    {
+      "id": "p-ava",
+      "name": "Ava Lindqvist",
+      "role": "Engineering Manager",
+      "org": "Kestrel Robotics",
+      "initials": "AL"
+    },
+    {
+      "id": "p-sam",
+      "name": "Sam Okafor",
+      "role": "Supplier DFM Engineer",
+      "org": "Apex Machining",
+      "initials": "SO",
+      "external": true
+    },
+    {
+      "id": "ai-autoreview",
+      "name": "AutoReview",
+      "role": "AI peer check",
+      "org": "CoLab",
+      "initials": "AI",
+      "isAi": true
+    }
+  ],
+  "jira": {
+    "project": "ENG",
+    "projectName": "Actuator Engineering",
+    "nextNumber": 145,
+    "issues": [
+      {
+        "key": "ENG-131",
+        "summary": "[PLT-1180 Rev B] Flatness 0.02 needs grinding; 0.05 is enough",
+        "status": "Done",
+        "resolution": "Done",
+        "priority": "High",
+        "assigneeId": "p-maya",
+        "colabId": "F-201",
+        "minsAgo": 7300
+      },
+      {
+        "key": "ENG-132",
+        "summary": "[PLT-1180 Rev B] Counterbore leaves a 1.2 mm floor",
+        "status": "Done",
+        "resolution": "Won't Do",
+        "priority": "Medium",
+        "assigneeId": "p-luis",
+        "colabId": "F-202",
+        "minsAgo": 7100
+      },
+      {
+        "key": "ENG-136",
+        "summary": "Raise stepper driver current limit to 2.8 A",
+        "status": "In Progress",
+        "priority": "Medium",
+        "assigneeId": "p-noor",
+        "minsAgo": 3900
+      },
+      {
+        "key": "ENG-138",
+        "summary": "Order Rev C prototype stock (6061 plate, 12 mm)",
+        "status": "To Do",
+        "priority": "Low",
+        "assigneeId": "p-luis",
+        "minsAgo": 2600
+      },
+      {
+        "key": "ENG-139",
+        "summary": "[BRK-2210 Rev C] Slot width 6.4 to 6.6 mm for M6 clearance",
+        "status": "Done",
+        "resolution": "Done",
+        "priority": "Medium",
+        "assigneeId": "p-maya",
+        "colabId": "F-108",
+        "minsAgo": 2500
+      },
+      {
+        "key": "ENG-141",
+        "summary": "[BRK-2210 Rev C] Gusset is 3.0 mm thick, below the 4.0 mm machinable minimum",
+        "status": "To Do",
+        "priority": "Highest",
+        "assigneeId": "p-maya",
+        "colabId": "F-101",
+        "minsAgo": 2800
+      },
+      {
+        "key": "ENG-142",
+        "summary": "[BRK-2210 Rev C] Motor bolt pattern is toleranced to datum B, but datum B isn't defined",
+        "status": "In Progress",
+        "priority": "Highest",
+        "assigneeId": "p-maya",
+        "colabId": "F-102",
+        "minsAgo": 1500
+      },
+      {
+        "key": "ENG-143",
+        "summary": "[BRK-2210 Rev C] Pilot bore Ø38.10 +0.025/0 is tighter than the motor needs",
+        "status": "In Progress",
+        "priority": "High",
+        "assigneeId": "p-maya",
+        "colabId": "F-103",
+        "minsAgo": 1400
+      },
+      {
+        "key": "ENG-144",
+        "summary": "[SHF-0412 Rev D] Keyway root radius R0.2 is a stress riser",
+        "status": "To Do",
+        "priority": "Highest",
+        "assigneeId": "p-maya",
+        "colabId": "F-301",
+        "minsAgo": 900
+      }
+    ]
+  },
+  "windchill": {
+    "nextPromotionNumber": 15,
+    "promotionRequests": [
+      {
+        "id": "PR-00014",
+        "partNumber": "HSG-3302",
+        "revision": "A",
+        "status": "APPROVED",
+        "requestedById": "p-maya",
+        "minsAgo": 8650,
+        "decisionId": "R-0041",
+        "reasons": []
+      }
+    ]
+  },
+  "nextDecisionNumber": 42,
+  "parts": [
+    {
+      "number": "BRK-2210",
+      "name": "Motor Mount Bracket",
+      "rev": "C",
+      "assembly": "ACT-100 Linear Actuator",
+      "model": "bracket",
+      "material": "Al 6061-T6",
+      "finish": "Clear anodize, Type II",
+      "process": "CNC machined, 3-axis",
+      "plmState": "INWORK",
+      "cadFiles": [
+        "BRK-2210_C.prt",
+        "BRK-2210_C.drw"
+      ],
+      "review": {
+        "title": "Rev C detailed design review",
+        "stage": "Detailed design",
+        "dueInMins": 1320
+      },
+      "reviewers": [
+        {
+          "role": "Design",
+          "personId": "p-maya",
+          "status": "complete",
+          "completedMinsAgo": 1250
+        },
+        {
+          "role": "Manufacturing",
+          "personId": "p-luis",
+          "status": "complete",
+          "completedMinsAgo": 380
+        },
+        {
+          "role": "Quality",
+          "personId": "p-priya",
+          "status": "pending",
+          "dueInMins": 1320
+        }
+      ],
+      "feedback": [
+        {
+          "id": "F-101",
+          "number": 1,
+          "priority": "critical",
+          "category": "DFM",
+          "status": "open",
+          "source": "human",
+          "authorId": "p-sam",
+          "ownerId": "p-maya",
+          "minsAgo": 2830,
+          "title": "Gusset is 3.0 mm thick, below the 4.0 mm machinable minimum",
+          "body": "At 3.0 mm the gussets will chatter on the side-wall pass in 6061-T6. Apex's minimum for an unsupported wall this tall is 4.0 mm (DFM-MACH-012). Thicken to 4.0 mm or drop the gusset height to 35 mm.",
+          "pin": {
+            "p": [
+              51,
+              24,
+              -20
+            ],
+            "n": [
+              1,
+              0,
+              0
+            ]
+          },
+          "jiraKey": "ENG-141",
+          "jiraStatus": "To Do",
+          "thread": [
+            {
+              "authorId": "p-sam",
+              "minsAgo": 2830,
+              "text": "Flagging this before we quote. We can hold 3.0 mm, but expect scrap on the first batch."
+            },
+            {
+              "authorId": "p-maya",
+              "minsAgo": 1600,
+              "text": "Agreed. Taking it to 4.0 mm in C.1 and re-checking the motor envelope."
+            }
+          ]
+        },
+        {
+          "id": "F-102",
+          "number": 2,
+          "priority": "critical",
+          "category": "GD&T",
+          "status": "in_progress",
+          "source": "human",
+          "authorId": "p-luis",
+          "ownerId": "p-maya",
+          "minsAgo": 1520,
+          "title": "Motor bolt pattern is toleranced to datum B, but datum B isn't defined",
+          "body": "The 4× Ø5.5 position callout reads ⌖ Ø0.1 Ⓜ | A | B, and there is no datum B feature on sheet 1. Inspection can't program the CMM without it. Suggest making the pilot bore datum B.",
+          "pin": {
+            "p": [
+              27.6,
+              81.6,
+              -32
+            ],
+            "n": [
+              0,
+              0,
+              1
+            ]
+          },
+          "jiraKey": "ENG-142",
+          "jiraStatus": "In Progress",
+          "thread": [
+            {
+              "authorId": "p-luis",
+              "minsAgo": 1520,
+              "text": "CMM programming for the first article is blocked on this."
+            },
+            {
+              "authorId": "p-maya",
+              "minsAgo": 1380,
+              "text": "Making the pilot bore datum B. Drafting has it in ENG-142."
+            }
+          ]
+        },
+        {
+          "id": "F-103",
+          "number": 3,
+          "priority": "high",
+          "category": "Tolerance",
+          "status": "in_progress",
+          "source": "human",
+          "authorId": "p-luis",
+          "ownerId": "p-maya",
+          "minsAgo": 1410,
+          "title": "Pilot bore Ø38.10 +0.025/0 is tighter than the motor needs",
+          "body": "NEMA 23 pilots are Ø38.10 −0.05. A +0.05/0 bore still locates the motor and lets us bore instead of ream, which saves about 40 s per part.",
+          "pin": {
+            "p": [
+              22.5,
+              58,
+              -32
+            ],
+            "n": [
+              0,
+              0,
+              1
+            ]
+          },
+          "jiraKey": "ENG-143",
+          "jiraStatus": "In Progress",
+          "thread": [
+            {
+              "authorId": "p-maya",
+              "minsAgo": 1300,
+              "text": "I want to keep the tight fit for the pilot build. Open to loosening it at Rev D once we have run-out data."
+            }
+          ]
+        },
+        {
+          "id": "F-104",
+          "number": 4,
+          "priority": "high",
+          "category": "DFM",
+          "status": "open",
+          "source": "ai",
+          "triage": "untriaged",
+          "authorId": "ai-autoreview",
+          "ownerId": null,
+          "minsAgo": 95,
+          "title": "Slot-to-edge distance is 4.7 mm; guideline is 1.5 × slot width (9.9 mm)",
+          "body": "Both front mounting slots sit 4.7 mm from the front edge. Kestrel guideline DFM-HOLE-004 asks for at least 1.5 × the slot width to avoid edge tear-out under clamp load.",
+          "citation": "DFM-HOLE-004 rev 2, Hole and slot edge distance",
+          "pin": {
+            "p": [
+              38,
+              8,
+              37.6
+            ],
+            "n": [
+              0,
+              1,
+              0
+            ]
+          },
+          "thread": []
+        },
+        {
+          "id": "F-105",
+          "number": 5,
+          "priority": "medium",
+          "category": "Drawing",
+          "status": "open",
+          "source": "human",
+          "authorId": "p-ava",
+          "ownerId": "p-maya",
+          "minsAgo": 700,
+          "title": "Title block still shows Rev B",
+          "body": "The sheet 1 title block and the revision table disagree. Update the title block to Rev C.",
+          "pin": null,
+          "sheetRef": "Sheet 1, zone A8",
+          "thread": []
+        },
+        {
+          "id": "F-106",
+          "number": 6,
+          "priority": "medium",
+          "category": "DFM",
+          "status": "open",
+          "source": "human",
+          "authorId": "p-sam",
+          "ownerId": "p-luis",
+          "minsAgo": 2700,
+          "title": "Inside corner R0.5 forces an extra 1 mm end mill",
+          "body": "The upright-to-base inside corner is R0.5. Our finishing mill for this pocket is Ø6 (R3). R0.5 means an extra tool and a slow pass. Can it go to R3?",
+          "pin": {
+            "p": [
+              -22,
+              9.5,
+              -30.5
+            ],
+            "n": [
+              0,
+              0.7071,
+              0.7071
+            ]
+          },
+          "thread": [
+            {
+              "authorId": "p-luis",
+              "minsAgo": 2500,
+              "text": "R3 clears the motor flange. Tracking for C.1."
+            }
+          ]
+        },
+        {
+          "id": "F-107",
+          "number": 7,
+          "priority": "low",
+          "category": "Finish",
+          "status": "resolved",
+          "source": "human",
+          "authorId": "p-priya",
+          "ownerId": "p-maya",
+          "minsAgo": 4300,
+          "resolvedById": "p-maya",
+          "resolvedMinsAgo": 1900,
+          "title": "Add the anodize spec: MIL-A-8625 Type II, Class 1",
+          "body": "Finish note just says 'anodize'. Call out the spec so the supplier quotes the right process.",
+          "pin": {
+            "p": [
+              -30,
+              100,
+              -36
+            ],
+            "n": [
+              0,
+              1,
+              0
+            ]
+          },
+          "thread": [
+            {
+              "authorId": "p-maya",
+              "minsAgo": 1900,
+              "text": "Added to note 4 on sheet 1."
+            }
+          ]
+        },
+        {
+          "id": "F-108",
+          "number": 8,
+          "priority": "medium",
+          "category": "Tolerance",
+          "status": "resolved",
+          "source": "human",
+          "authorId": "p-luis",
+          "ownerId": "p-maya",
+          "minsAgo": 4100,
+          "resolvedById": "p-maya",
+          "resolvedMinsAgo": 2500,
+          "title": "Slot width 6.4 mm is too tight for M6 clearance",
+          "body": "Standard M6 close-fit clearance is 6.4, normal fit is 6.6. The assembly fixture needs normal fit.",
+          "pin": {
+            "p": [
+              47.8,
+              8,
+              32
+            ],
+            "n": [
+              0,
+              1,
+              0
+            ]
+          },
+          "jiraKey": "ENG-139",
+          "jiraStatus": "Done",
+          "thread": []
+        }
+      ]
+    },
+    {
+      "number": "PLT-1180",
+      "name": "Actuator Base Plate",
+      "rev": "B",
+      "assembly": "ACT-100 Linear Actuator",
+      "model": "plate",
+      "material": "Al 6061-T6",
+      "finish": "Black anodize, Type II",
+      "process": "CNC machined, 3-axis",
+      "plmState": "INWORK",
+      "cadFiles": [
+        "PLT-1180_B.prt",
+        "PLT-1180_B.drw"
+      ],
+      "review": {
+        "title": "Rev B release review",
+        "stage": "Release",
+        "dueInMins": 2700
+      },
+      "reviewers": [
+        {
+          "role": "Design",
+          "personId": "p-maya",
+          "status": "complete",
+          "completedMinsAgo": 6900
+        },
+        {
+          "role": "Manufacturing",
+          "personId": "p-luis",
+          "status": "complete",
+          "completedMinsAgo": 6800
+        },
+        {
+          "role": "Quality",
+          "personId": "p-priya",
+          "status": "complete",
+          "completedMinsAgo": 6600
+        }
+      ],
+      "feedback": [
+        {
+          "id": "F-201",
+          "number": 1,
+          "priority": "high",
+          "category": "Tolerance",
+          "status": "resolved",
+          "source": "human",
+          "authorId": "p-luis",
+          "ownerId": "p-maya",
+          "minsAgo": 7400,
+          "resolvedById": "p-maya",
+          "resolvedMinsAgo": 7000,
+          "title": "Flatness 0.02 over 200 mm needs grinding; 0.05 is enough",
+          "body": "The rail mounting face only needs 0.05. At 0.02 we add a grinding op and a week of lead time.",
+          "pin": {
+            "p": [
+              55,
+              10,
+              30
+            ],
+            "n": [
+              0,
+              1,
+              0
+            ]
+          },
+          "jiraKey": "ENG-131",
+          "jiraStatus": "Done",
+          "thread": []
+        },
+        {
+          "id": "F-202",
+          "number": 2,
+          "priority": "medium",
+          "category": "DFM",
+          "status": "waived",
+          "source": "human",
+          "authorId": "p-sam",
+          "ownerId": "p-luis",
+          "minsAgo": 7200,
+          "waiverReason": "Floor carries no load. Accepted for Rev B; revisit if we move to a thinner plate.",
+          "waivedById": "p-luis",
+          "waivedMinsAgo": 6950,
+          "title": "Counterbore leaves a 1.2 mm floor",
+          "body": "The M8 counterbores leave 1.2 mm of material under the head. That is thin for a clamp face.",
+          "pin": {
+            "p": [
+              76,
+              10,
+              58
+            ],
+            "n": [
+              0,
+              1,
+              0
+            ]
+          },
+          "jiraKey": "ENG-132",
+          "jiraStatus": "Done",
+          "thread": []
+        },
+        {
+          "id": "F-203",
+          "number": 3,
+          "priority": "low",
+          "category": "Drawing",
+          "status": "resolved",
+          "source": "human",
+          "authorId": "p-ava",
+          "ownerId": "p-maya",
+          "minsAgo": 7100,
+          "resolvedById": "p-maya",
+          "resolvedMinsAgo": 6990,
+          "title": "Add the part number engraving note",
+          "body": "Laser-mark the part number and revision on the underside.",
+          "pin": null,
+          "sheetRef": "Sheet 1, zone D2",
+          "thread": []
+        },
+        {
+          "id": "F-204",
+          "number": 4,
+          "priority": "medium",
+          "category": "DFM",
+          "status": "dismissed",
+          "source": "ai",
+          "triage": "dismissed",
+          "authorId": "ai-autoreview",
+          "ownerId": null,
+          "minsAgo": 7300,
+          "dismissReason": "Hole pattern is fixed by the frame interface. The ACT-100 FEA shows enough margin at this load.",
+          "dismissedById": "p-luis",
+          "title": "Corner holes leave 7.5 mm to the edge; guideline is 1.5 × D (13.5 mm)",
+          "body": "The four Ø9 corner holes sit 7.5 mm from the plate edges. DFM-HOLE-004 recommends at least 1.5 × the hole diameter.",
+          "citation": "DFM-HOLE-004 rev 2, Hole and slot edge distance",
+          "pin": {
+            "p": [
+              -78,
+              10,
+              -58
+            ],
+            "n": [
+              0,
+              1,
+              0
+            ]
+          },
+          "thread": []
+        }
+      ]
+    },
+    {
+      "number": "SHF-0412",
+      "name": "Output Shaft",
+      "rev": "D",
+      "assembly": "ACT-100 Linear Actuator",
+      "model": "shaft",
+      "material": "17-4PH stainless, H1025",
+      "finish": "Passivated",
+      "process": "CNC turned",
+      "plmState": "INWORK",
+      "cadFiles": [
+        "SHF-0412_D.prt",
+        "SHF-0412_D.drw"
+      ],
+      "review": {
+        "title": "Rev D design review",
+        "stage": "Detailed design",
+        "dueInMins": 4200
+      },
+      "reviewers": [
+        {
+          "role": "Design",
+          "personId": "p-maya",
+          "status": "complete",
+          "completedMinsAgo": 1100
+        },
+        {
+          "role": "Manufacturing",
+          "personId": "p-luis",
+          "status": "pending",
+          "dueInMins": 4200
+        },
+        {
+          "role": "Quality",
+          "personId": "p-priya",
+          "status": "pending",
+          "dueInMins": 4200
+        }
+      ],
+      "feedback": [
+        {
+          "id": "F-301",
+          "number": 1,
+          "priority": "critical",
+          "category": "Stress",
+          "status": "open",
+          "source": "human",
+          "authorId": "p-noor",
+          "ownerId": "p-maya",
+          "minsAgo": 920,
+          "title": "Keyway root radius R0.2 is a stress riser at 18 N·m peak torque",
+          "body": "Fatigue test sample 3 cracked at the keyway root after 1.2M cycles. Go to R0.4 minimum or switch to a spline.",
+          "pin": {
+            "p": [
+              60,
+              5.6,
+              2.2
+            ],
+            "n": [
+              0,
+              0.93,
+              0.37
+            ]
+          },
+          "jiraKey": "ENG-144",
+          "jiraStatus": "To Do",
+          "thread": [
+            {
+              "authorId": "p-noor",
+              "minsAgo": 920,
+              "text": "Crack photos are on the test report, section 4."
+            }
+          ]
+        },
+        {
+          "id": "F-302",
+          "number": 2,
+          "priority": "medium",
+          "category": "Tolerance",
+          "status": "open",
+          "source": "human",
+          "authorId": "p-luis",
+          "ownerId": "p-maya",
+          "minsAgo": 800,
+          "title": "Confirm bearing seat Ø15 k6 with the bearing supplier",
+          "body": "k6 is a light press fit. Confirm the supplier's recommendation for this load case before we grind.",
+          "pin": {
+            "p": [
+              -31,
+              0,
+              7.5
+            ],
+            "n": [
+              0,
+              0,
+              1
+            ]
+          },
+          "thread": []
+        },
+        {
+          "id": "F-303",
+          "number": 3,
+          "priority": "low",
+          "category": "Drawing",
+          "status": "resolved",
+          "source": "human",
+          "authorId": "p-ava",
+          "ownerId": "p-maya",
+          "minsAgo": 1500,
+          "resolvedById": "p-maya",
+          "resolvedMinsAgo": 1200,
+          "title": "Add the passivation spec (ASTM A967)",
+          "body": "Finish note needs the passivation spec.",
+          "pin": {
+            "p": [
+              5,
+              7,
+              0
+            ],
+            "n": [
+              0,
+              1,
+              0
+            ]
+          },
+          "thread": []
+        }
+      ]
+    },
+    {
+      "number": "HSG-3302",
+      "name": "Sensor Housing",
+      "rev": "A",
+      "assembly": "ACT-100 Linear Actuator",
+      "model": "housing",
+      "material": "Al 6061-T6",
+      "finish": "Black anodize, Type II",
+      "process": "CNC machined, 3-axis",
+      "plmState": "RELEASED",
+      "releasedMinsAgo": 8640,
+      "releasedDecisionId": "R-0041",
+      "releasedPromotionId": "PR-00014",
+      "cadFiles": [
+        "HSG-3302_A.prt",
+        "HSG-3302_A.drw"
+      ],
+      "review": {
+        "title": "Rev A release review",
+        "stage": "Release",
+        "dueInMins": -8700
+      },
+      "reviewers": [
+        {
+          "role": "Design",
+          "personId": "p-maya",
+          "status": "complete",
+          "completedMinsAgo": 9000
+        },
+        {
+          "role": "Manufacturing",
+          "personId": "p-luis",
+          "status": "complete",
+          "completedMinsAgo": 8900
+        },
+        {
+          "role": "Quality",
+          "personId": "p-priya",
+          "status": "complete",
+          "completedMinsAgo": 8700
+        }
+      ],
+      "feedback": [
+        {
+          "id": "F-401",
+          "number": 1,
+          "priority": "high",
+          "category": "DFM",
+          "status": "resolved",
+          "source": "human",
+          "authorId": "p-sam",
+          "ownerId": "p-maya",
+          "minsAgo": 9800,
+          "resolvedById": "p-maya",
+          "resolvedMinsAgo": 9200,
+          "title": "2.0 mm walls won't hold the O-ring seal flat",
+          "body": "Walls deflect under the lid screws at 2.0 mm. 3.0 mm is the minimum for a face seal this long.",
+          "pin": {
+            "p": [
+              45,
+              22,
+              0
+            ],
+            "n": [
+              1,
+              0,
+              0
+            ]
+          },
+          "thread": []
+        },
+        {
+          "id": "F-402",
+          "number": 2,
+          "priority": "medium",
+          "category": "Drawing",
+          "status": "resolved",
+          "source": "human",
+          "authorId": "p-priya",
+          "ownerId": "p-maya",
+          "minsAgo": 9500,
+          "resolvedById": "p-maya",
+          "resolvedMinsAgo": 9100,
+          "title": "Cable gland boss needs a thread callout",
+          "body": "Specify M12×1.5 and the gland's recommended thread depth.",
+          "pin": {
+            "p": [
+              20,
+              22,
+              34
+            ],
+            "n": [
+              0,
+              0,
+              1
+            ]
+          },
+          "thread": []
+        },
+        {
+          "id": "F-403",
+          "number": 3,
+          "priority": "low",
+          "category": "Drawing",
+          "status": "resolved",
+          "source": "human",
+          "authorId": "p-priya",
+          "ownerId": "p-maya",
+          "minsAgo": 9400,
+          "resolvedById": "p-maya",
+          "resolvedMinsAgo": 9050,
+          "title": "Call out the O-ring groove per AS568-038",
+          "body": "Reference the AS568 size so purchasing buys the right seal.",
+          "pin": {
+            "p": [
+              -20,
+              40,
+              28.5
+            ],
+            "n": [
+              0,
+              1,
+              0
+            ]
+          },
+          "thread": []
+        }
+      ]
+    }
+  ],
+  "history": [
+    {
+      "minsAgo": 8640,
+      "system": "windchill",
+      "direction": "in",
+      "level": "ok",
+      "title": "Windchill confirmed HSG-3302 Rev A is Released",
+      "detail": "Lifecycle INWORK → RELEASED by PR-00014. Decision R-0041.",
+      "ref": "PR-00014",
+      "part": "HSG-3302",
+      "tag": "released"
+    },
+    {
+      "minsAgo": 8639,
+      "system": "windchill",
+      "direction": "out",
+      "level": "ok",
+      "title": "Attached HSG-3302_RevA_review-record.html to HSG-3302 in Windchill",
+      "detail": "Attach review record R-0041 to HSG-3302 in Windchill",
+      "ref": "HSG-3302",
+      "part": "HSG-3302",
+      "statusCode": 201,
+      "latencyMs": 142,
+      "tag": "attached"
+    },
+    {
+      "minsAgo": 2800,
+      "system": "jira",
+      "direction": "out",
+      "level": "ok",
+      "title": "Created ENG-141 for F-101",
+      "detail": "Create Jira issue for F-101",
+      "ref": "ENG-141",
+      "part": "BRK-2210",
+      "statusCode": 201,
+      "latencyMs": 188,
+      "tag": "created"
+    },
+    {
+      "minsAgo": 1500,
+      "system": "jira",
+      "direction": "out",
+      "level": "ok",
+      "title": "Created ENG-142 for F-102",
+      "detail": "Create Jira issue for F-102",
+      "ref": "ENG-142",
+      "part": "BRK-2210",
+      "statusCode": 201,
+      "latencyMs": 164,
+      "tag": "created"
+    },
+    {
+      "minsAgo": 1400,
+      "system": "jira",
+      "direction": "out",
+      "level": "ok",
+      "title": "Created ENG-143 for F-103",
+      "detail": "Create Jira issue for F-103",
+      "ref": "ENG-143",
+      "part": "BRK-2210",
+      "statusCode": 201,
+      "latencyMs": 171,
+      "tag": "created"
+    },
+    {
+      "minsAgo": 1378,
+      "system": "jira",
+      "direction": "in",
+      "level": "ok",
+      "title": "Maya Chen moved ENG-142 to In Progress; F-102 is now in progress",
+      "detail": "Signature verified.",
+      "ref": "F-102",
+      "part": "BRK-2210",
+      "tag": "applied"
+    },
+    {
+      "minsAgo": 900,
+      "system": "jira",
+      "direction": "out",
+      "level": "ok",
+      "title": "Created ENG-144 for F-301",
+      "detail": "Create Jira issue for F-301",
+      "ref": "ENG-144",
+      "part": "SHF-0412",
+      "statusCode": 201,
+      "latencyMs": 158,
+      "tag": "created"
+    },
+    {
+      "minsAgo": 380,
+      "system": "colab",
+      "direction": "in",
+      "level": "ok",
+      "title": "Luis Ortega completed the Manufacturing review",
+      "detail": "BRK-2210 Rev C detailed design review.",
+      "ref": "BRK-2210",
+      "part": "BRK-2210",
+      "tag": "review"
+    },
+    {
+      "minsAgo": 95,
+      "system": "colab",
+      "direction": "in",
+      "level": "info",
+      "title": "AutoReview flagged F-104 on BRK-2210 Rev C",
+      "detail": "Slot-to-edge distance is 4.7 mm; guideline is 1.5 × slot width. Waiting for a person to triage it.",
+      "ref": "F-104",
+      "part": "BRK-2210",
+      "tag": "ai"
+    }
+  ]
+}

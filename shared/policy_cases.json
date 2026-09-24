@@ -1,0 +1,118 @@
+{
+  "description": "Test vectors for the release policy engine. The Python engine (server/releasegate/policy.py) and the TypeScript port (web/src/engine/policy.ts) must both pass every case.",
+  "baseReviews": [
+    { "role": "Design", "status": "complete" },
+    { "role": "Manufacturing", "status": "complete" },
+    { "role": "Quality", "status": "complete" }
+  ],
+  "cases": [
+    {
+      "name": "everything clear is ready",
+      "state": { "feedback": [ { "id": "F-1", "priority": "critical", "status": "resolved", "source": "human" } ] },
+      "expect": { "outcome": "READY", "failing": [], "warnings": [], "blockingPassed": 5, "itemsToClear": 0 }
+    },
+    {
+      "name": "open critical blocks",
+      "state": { "feedback": [ { "id": "F-1", "priority": "critical", "status": "open", "source": "human" } ] },
+      "expect": { "outcome": "BLOCKED", "failing": ["critical-closed"], "warnings": [], "blockingPassed": 4, "itemsToClear": 1 }
+    },
+    {
+      "name": "in-progress critical still blocks",
+      "state": { "feedback": [ { "id": "F-1", "priority": "critical", "status": "in_progress", "source": "human" } ] },
+      "expect": { "outcome": "BLOCKED", "failing": ["critical-closed"], "warnings": [], "blockingPassed": 4, "itemsToClear": 1 }
+    },
+    {
+      "name": "waived critical still blocks because critical waivers aren't allowed",
+      "state": { "feedback": [ { "id": "F-1", "priority": "critical", "status": "waived", "source": "human" } ] },
+      "expect": { "outcome": "BLOCKED", "failing": ["critical-closed"], "warnings": [], "blockingPassed": 4, "itemsToClear": 1 }
+    },
+    {
+      "name": "waived high passes",
+      "state": { "feedback": [ { "id": "F-1", "priority": "high", "status": "waived", "source": "human" } ] },
+      "expect": { "outcome": "READY", "failing": [], "warnings": [], "blockingPassed": 5, "itemsToClear": 0 }
+    },
+    {
+      "name": "untriaged AI finding blocks the triage rule only",
+      "state": { "feedback": [ { "id": "F-1", "priority": "high", "status": "open", "source": "ai", "triage": "untriaged" } ] },
+      "expect": { "outcome": "BLOCKED", "failing": ["ai-triaged"], "warnings": [], "blockingPassed": 4, "itemsToClear": 1 }
+    },
+    {
+      "name": "accepted AI finding counts like any other feedback",
+      "state": { "feedback": [ { "id": "F-1", "priority": "high", "status": "open", "source": "ai", "triage": "accepted" } ] },
+      "expect": { "outcome": "BLOCKED", "failing": ["high-dispositioned"], "warnings": [], "blockingPassed": 4, "itemsToClear": 1 }
+    },
+    {
+      "name": "dismissed AI finding passes",
+      "state": { "feedback": [ { "id": "F-1", "priority": "high", "status": "dismissed", "source": "ai", "triage": "dismissed" } ] },
+      "expect": { "outcome": "READY", "failing": [], "warnings": [], "blockingPassed": 5, "itemsToClear": 0 }
+    },
+    {
+      "name": "pending review blocks",
+      "state": {
+        "feedback": [],
+        "reviews": [
+          { "role": "Design", "status": "complete" },
+          { "role": "Manufacturing", "status": "complete" },
+          { "role": "Quality", "status": "pending" }
+        ]
+      },
+      "expect": { "outcome": "BLOCKED", "failing": ["reviews-complete"], "warnings": [], "blockingPassed": 4, "itemsToClear": 1 }
+    },
+    {
+      "name": "review never requested blocks",
+      "state": {
+        "feedback": [],
+        "reviews": [ { "role": "Design", "status": "complete" }, { "role": "Manufacturing", "status": "complete" } ]
+      },
+      "expect": { "outcome": "BLOCKED", "failing": ["reviews-complete"], "warnings": [], "blockingPassed": 4, "itemsToClear": 1 }
+    },
+    {
+      "name": "unconfirmed sync blocks when the policy fails closed",
+      "state": { "feedback": [], "sync": { "pending": 2, "failed": 0, "deliveryIds": ["12", "13"] } },
+      "expect": { "outcome": "BLOCKED", "failing": ["systems-in-sync"], "warnings": [], "blockingPassed": 4, "itemsToClear": 2 }
+    },
+    {
+      "name": "unconfirmed sync only warns when the policy fails open",
+      "policyOverrides": { "failClosedOnSync": false },
+      "state": { "feedback": [], "sync": { "pending": 0, "failed": 1, "deliveryIds": ["12"] } },
+      "expect": { "outcome": "READY", "failing": [], "warnings": ["systems-in-sync"], "blockingPassed": 4, "itemsToClear": 0 }
+    },
+    {
+      "name": "open medium and low feedback only warns",
+      "state": {
+        "feedback": [
+          { "id": "F-1", "priority": "medium", "status": "open", "source": "human" },
+          { "id": "F-2", "priority": "low", "status": "in_progress", "source": "human" }
+        ]
+      },
+      "expect": { "outcome": "READY", "failing": [], "warnings": ["minor-tracked"], "blockingPassed": 5, "itemsToClear": 0 }
+    },
+    {
+      "name": "demo starting state for BRK-2210 Rev C",
+      "state": {
+        "feedback": [
+          { "id": "F-101", "priority": "critical", "status": "open", "source": "human" },
+          { "id": "F-102", "priority": "critical", "status": "in_progress", "source": "human" },
+          { "id": "F-103", "priority": "high", "status": "in_progress", "source": "human" },
+          { "id": "F-104", "priority": "high", "status": "open", "source": "ai", "triage": "untriaged" },
+          { "id": "F-105", "priority": "medium", "status": "open", "source": "human" },
+          { "id": "F-106", "priority": "medium", "status": "open", "source": "human" },
+          { "id": "F-107", "priority": "low", "status": "resolved", "source": "human" },
+          { "id": "F-108", "priority": "medium", "status": "resolved", "source": "human" }
+        ],
+        "reviews": [
+          { "role": "Design", "status": "complete" },
+          { "role": "Manufacturing", "status": "complete" },
+          { "role": "Quality", "status": "pending" }
+        ]
+      },
+      "expect": {
+        "outcome": "BLOCKED",
+        "failing": ["critical-closed", "high-dispositioned", "ai-triaged", "reviews-complete"],
+        "warnings": ["minor-tracked"],
+        "blockingPassed": 1,
+        "itemsToClear": 5
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "kestrel-release",
+  "name": "Kestrel release policy",
+  "version": 3,
+  "description": "Checks a part revision must pass before Windchill can promote it to Released.",
+  "failClosedOnSync": true,
+  "rules": [
+    {
+      "id": "critical-closed",
+      "type": "no_open_feedback",
+      "title": "No open critical feedback",
+      "blocking": true,
+      "params": { "priorities": ["critical"], "allowWaiver": false }
+    },
+    {
+      "id": "high-dispositioned",
+      "type": "no_open_feedback",
+      "title": "High-priority feedback resolved or waived",
+      "blocking": true,
+      "params": { "priorities": ["high"], "allowWaiver": true }
+    },
+    {
+      "id": "ai-triaged",
+      "type": "ai_findings_triaged",
+      "title": "AutoReview findings triaged by a person",
+      "blocking": true,
+      "params": {}
+    },
+    {
+      "id": "reviews-complete",
+      "type": "requested_reviews_complete",
+      "title": "Requested reviews complete",
+      "blocking": true,
+      "params": { "roles": ["Design", "Manufacturing", "Quality"] }
+    },
+    {
+      "id": "systems-in-sync",
+      "type": "integrations_in_sync",
+      "title": "Jira and Windchill in sync",
+      "blocking": true,
+      "params": {}
+    },
+    {
+      "id": "minor-tracked",
+      "type": "no_open_feedback",
+      "title": "Medium and low feedback tracked",
+      "blocking": false,
+      "params": { "priorities": ["medium", "low"], "allowWaiver": true }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node (the built console in web/dist and web/dist-offline is committed on purpose)
+web/node_modules/
+
+# Demo data, recreated on every start
+*.db
+*.db-shm
+*.db-wal
+
+# Test output
+e2e/shots/
+
+# OS and editor
+.DS_Store
+.idea/
+.vscode/
