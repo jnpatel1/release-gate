@@ -27,7 +27,7 @@ No Python handy? Open `web/dist-offline/index.html` in Chrome. It's the same con
 5. On **Checks**, **Nudge** Priya for the Quality review.
 6. **Release Rev C.** Windchill asks, the gate approves, Windchill confirms, the review record is attached.
 
-Then reset (··· menu), turn on a **Simulate** switch, and do it again. [docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md) has the talk track.
+Then reset (··· menu), turn on a **Simulate** switch, and do it again.
 
 ## How it works
 
@@ -85,7 +85,7 @@ shared/        seed scenario, release policy, policy test vectors (used by both 
 server/        FastAPI app: policy, outbox, connectors, webhooks, GraphQL, mock Jira and Windchill
 web/           React console; src/engine is the in-browser engine for the single-file build
 e2e/           Playwright script that runs the demo end to end
-docs/          architecture notes and the demo talk track
+docs/          architecture notes and the README screenshot
 ```
 
 Useful URLs while it runs: `/graphql` (GraphiQL), `/api/docs` (REST), `/mock/jira/rest/api/2/search?jql=project=ENG`, `/mock/windchill/Windchill/servlet/odata/ProdMgmt/Parts`.
